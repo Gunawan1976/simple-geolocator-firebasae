@@ -1,6 +1,6 @@
 # geolokasi
 
-A new Flutter project.
+hi, in this project iam trying to implement firebase and geolocator
 
 ## Getting Started
 
