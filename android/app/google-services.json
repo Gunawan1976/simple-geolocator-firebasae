@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "910748880425",
+    "project_id": "presensi-51e9a",
+    "storage_bucket": "presensi-51e9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910748880425:android:61a9c2ad1333f8cb6c9638",
+        "android_client_info": {
+          "package_name": "com.gunawan.geolokasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910748880425-2mbpbnccsle7kt57ukldag6r1cm5h1kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaOOsl5-6UeQzRkt_3BbtQX8rnl9zS2DQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910748880425-2mbpbnccsle7kt57ukldag6r1cm5h1kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910748880425-72p4vnbo0ic13ifjqkl0udv260kl7bqu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gunawan.geolokasi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
