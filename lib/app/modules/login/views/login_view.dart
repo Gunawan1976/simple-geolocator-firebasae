@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolokasi/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
@@ -51,7 +52,11 @@ class LoginView extends GetView<LoginController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextButton(onPressed: () {}, child: Text("Lupa Password")),
+                    TextButton(
+                        onPressed: () {
+                          Get.toNamed(Routes.FORGOT_PASSWORD);
+                        },
+                        child: Text("Lupa Password")),
                     Text("|"),
                     TextButton(
                         onPressed: () {
