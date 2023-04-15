@@ -21,31 +21,15 @@ class HomeView extends GetView<HomeController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-                  stream: controller.streamRole(),
-                  builder: (context, snapshot) {
-                    String role = snapshot.data!.data()!["role"]!;
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return SizedBox();
-                    }
-                    if (role.contains("admin")) {
-                      return IconButton(
-                          onPressed: () {
-                            Get.toNamed(Routes.ADD_PEGAWAI);
-                          },
-                          icon: Icon(Icons.person));
-                    } else {
-                      return SizedBox.shrink();
-                    }
-                  }),
-              IconButton(
-                  onPressed: () async {
-                    await FirebaseAuth.instance.signOut();
-                    Get.offAllNamed(Routes.LOGIN);
-                  },
-                  icon: Icon(
-                    Icons.logout,
-                    size: 20,
-                  ))
+                stream: controller.streamRole(),
+                builder: (context, snapshot) {
+                  return IconButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.PROFILE_PAGE);
+                      },
+                      icon: Icon(Icons.person));
+                },
+              ),
             ],
           ),
         ],
