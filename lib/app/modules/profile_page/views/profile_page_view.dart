@@ -34,7 +34,9 @@ class ProfilePageView extends GetView<ProfilePageController> {
                         height: 100,
                         width: 100,
                         child: Image.network(
-                          "https://ui-avatars.com/api/?name=${user['name']}",
+                          user["profile"] != null && user["profile"] != ""
+                              ? user["profile"]
+                              : "https://ui-avatars.com/api/?name=${user['name']}",
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -54,12 +56,16 @@ class ProfilePageView extends GetView<ProfilePageController> {
                 ),
                 SizedBox(height: 15),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.UPDATE_PROFILE, arguments: user);
+                  },
                   leading: Icon(Icons.person),
                   title: Text("Update Profile"),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.UPDATE_PASSWORD);
+                  },
                   leading: Icon(Icons.vpn_key),
                   title: Text("Change Password"),
                 ),

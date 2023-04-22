@@ -30,16 +30,23 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ),
                 SizedBox(height: 15),
-                TextField(
-                  autocorrect: false,
-                  controller: controller.passC,
-                  obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+                Obx(() => TextField(
+                      autocorrect: false,
+                      controller: controller.passC,
+                      obscureText: controller.ishidden.value,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              controller.ishidden.toggle();
+                            },
+                            icon: controller.ishidden.value
+                                ? Icon(Icons.remove_red_eye_sharp)
+                                : Icon(Icons.remove_red_eye_outlined)),
+                        labelText: "Password",
+                        border: OutlineInputBorder(),
+                      ),
+                    )),
                 SizedBox(height: 15),
                 Container(
                     width: 150,

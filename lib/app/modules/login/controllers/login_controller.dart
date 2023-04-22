@@ -10,6 +10,7 @@ class LoginController extends GetxController {
 
   FirebaseAuth auth = FirebaseAuth.instance;
   late UserCredential userCredential;
+  RxBool ishidden = true.obs;
 
   void login() async {
     if (emailC.text.isNotEmpty && passC.text.isNotEmpty) {
