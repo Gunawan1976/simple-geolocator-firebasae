@@ -27,9 +27,9 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
-      transition: Transition.cupertino,
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: _Paths.ADD_PEGAWAI,
@@ -54,8 +54,9 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE_PAGE,
-      page: () => const ProfilePageView(),
+      page: () => ProfilePageView(),
       binding: ProfilePageBinding(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: _Paths.UPDATE_PROFILE,

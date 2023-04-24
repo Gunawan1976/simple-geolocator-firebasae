@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -53,13 +54,46 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
           ),
           SizedBox(height: 15),
           Text("Photo Profile", style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              user["profile"] != null && user["profile"] != ""
-                  ? Text("Dipilih", style: TextStyle(fontSize: 12))
-                  : Text("Belum Dipilih", style: TextStyle(fontSize: 12)),
-              TextButton(onPressed: () {}, child: Text("Upload"))
+              GetBuilder<UpdateProfileController>(
+                builder: (c) {
+                  if (c.image != null) {
+                    return ClipOval(
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        child: Image.file(
+                          File(c.image!.path),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  } else {
+                    if (user["profile"] == null || user["profile"] == "") {
+                      return Text("Data kosong");
+                    } else {
+                      return ClipOval(
+                        child: Container(
+                          height: 150,
+                          width: 150,
+                          child: Image.network(
+                            user["profile"],
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    }
+                  }
+                },
+              ),
+              TextButton(
+                  onPressed: () {
+                    controller.pickImage();
+                  },
+                  child: Text("Upload"))
             ],
           ),
           SizedBox(height: 15),
